@@ -1,0 +1,17 @@
+h1{
+    font-size: 5vw;
+    color:  steelblue;
+}
+p{
+    color: #333;
+}
+span{
+    color: black;
+    font-weight: bold;
+}
+.current-weather{
+    color: $header-color;
+    @include flexCenter();
+    flex-direction: column;
+    margin-bottom:220px;
+}

@@ -1,0 +1,135 @@
+.container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 92vh;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    width: 67%;
+    height: 92vh;
+}
+.content-left{
+    @include flexCenter();
+    width: 75%;
+    height: 92vh;
+    flex-direction: column;
+    color: $header-color;
+    h1{
+        width: 35vw;
+        font-size: 55px;;
+        font-weight: bold;
+        color: $secondary;
+        font-family: 'Open Sans Condensed';
+    }
+}
+.signUp{
+    width: 35vw;
+    height: 200px;
+    border-radius: 2%;
+    hr{
+        margin-top: 5px;
+    }
+    h4{
+         color: $secondary;
+         background-color: black;
+    }
+}
+form input{
+    display: block;
+    margin-top: 15px;
+    width: 20vw;
+    height: 40px;
+    background-color: #ededed;
+    color: $header-color;
+    padding: 8px;
+    border: none;
+    border-radius: 2%;
+}
+button{
+    margin-top: 20px;
+    width: 20vw;
+    height: 45px;
+    border: none;
+    background-color: steelblue;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgb(14, 89, 151);
+}
+.loader{
+    margin-top: 10px;
+}
+
+.error{
+    border:1px solid rgb(221, 155, 155);
+    width: 20vw;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #df9393;
+    color: darkred;
+    border-radius: 3%;
+}
+.content-right{
+    @include flexCenter();
+    width: 25%;
+    height: 92vh;
+    background-color: rgba($color: #ffffff, $alpha: 0.1)
+}
+
+@media screen and (max-width: 768px){
+    .container{
+        height:100%;
+        flex-direction: column;
+    }
+    .content{
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .content-left{
+        width: 100%;
+        flex-direction: row;
+        padding: 30px;
+        justify-content: space-between;
+        h1{
+            display: none;
+        }
+    }
+    .content-right{
+        width: 100%;
+        height: 100%;
+        .current-weather{
+            margin-bottom: 0px;
+            margin-top: 90px;
+        }
+    }
+    .signUp{
+        width: 100%;
+    }
+    form input{
+        width: 100%;
+    }
+    button{
+        width: 100%;
+        background-color: #079bca;
+        height: 40px;
+    }
+    button:hover{
+        background-color: #61bbdc;
+    }
+    .error{
+        width: 100%;
+    }
+    body{
+        overflow-x: hidden
+    }
+    .h-large{
+        font-size: 65px;
+    }
+}

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open sans', sans-serif;
+    color: steelblue;
+    //font-family: 'Open Sans', sans-serif;
+
+}
+body{
+    background-color: #2d2206;
+}
+//IMPORTS
+@import './variables';
+@import './header';
+@import './landing';
+@import './weather';
+@import './dashboard';
+@import './myAccount';
+//MIXINS
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

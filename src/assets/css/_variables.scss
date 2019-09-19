@@ -1,0 +1,21 @@
+//COLORS
+$header-color: #5d4954; 
+$header-text-color: rgb(209, 200, 200);
+$link-hover-color: #61bbdc;
+$nav-border-color: rgb(77, 19, 62);
+
+//adobe color CC main steelblue 
+$primary: #4682B4;
+$secondary: #515C66;
+$therary: #50CCC2;
+$fourth: #D29487;
+$error : #FF504A;
+
+//main navbar main
+
+//MIXINS
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
