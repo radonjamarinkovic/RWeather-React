@@ -5,7 +5,6 @@ import Weather from '../weather';
 
 
 const Landing = () => {
-
     return (
         <div>
             <div className="container">
