@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import { withRouter } from 'react-router-dom';
-import firebase from '../../config/fbConfig';
+import {signUp} from '../../helpers/helpers';
 
 import Loader from '../../assets/loaders/loader.svg';
 
@@ -10,38 +10,21 @@ const SignUp = ({history}) => {
     const [error, setError] = useState();
     const [loader, setLoader] = useState(false);
 
-    const handleSubmit = useCallback(
-        async e => {
+    const handleSubmit = (e) => {
+    
             e.preventDefault();
             setLoader(true);
             const {email, password} = e.target.elements;
-            try {
-                await firebase
-                        .auth()
-                        .createUserWithEmailAndPassword(email.value, password.value)
-                        .then(res => {
-                            console.log('SIGNUP RESPONSE',res);
-                            const db = firebase.firestore();
-                            db.collection('users').doc(res.user.uid).set({
-                                email: res.user.email,
-                                emailVerified: res.user.emailVerified,
-                                displayName: res.user.displayName,
-                                phoneNumber: res.user.phoneNumber,
-                                photoUrl: res.user.photoURL,
-                                firstName: '',
-                                lastName: ''
-                            });
-                        }).then(() => {
-                            history.push('/dashboard');
-                        });
-                
-                //history.push('/cities');
-            } catch(error) {
-                setError(error.message);
-            }
-            setLoader(false);
-        }, [history]
-    );
+
+            signUp(email.value, password.value).then(() => {
+                    setLoader(false);
+                    history.push('/dashboard');
+                }).catch(err => {
+                    console.log(err);
+                    setError(err.message);
+                    setLoader(false);
+                });
+    };
 
     return (
         <div>

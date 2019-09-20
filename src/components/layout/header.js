@@ -30,7 +30,7 @@ function Header() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/dashboard">Dashboard</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                    <li ><Link to="/myAccount">My Account</Link></li>
+                    <li ><Link to="/myAccount">Account</Link></li>
                     {currentUser ? (
                         <li><Link to="/" onClick={signOut}>Logout</Link></li>
                     ) : (

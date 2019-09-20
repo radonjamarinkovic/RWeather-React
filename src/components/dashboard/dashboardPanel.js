@@ -44,7 +44,7 @@ const DashboardPanel = () => {
                         </div>
 
                         <div className="panel-footer-section-2">
-                            <button className="panel-button">More Details</button>
+                            <button onClick={a} className="panel-button">More Details</button>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,7 @@ const DashboardPanel = () => {
                         <div className="weather-footer-section-item">
                             <h4>Humidity</h4>
                             <span className="footer-symbol">¥</span>
-                            <p>34%<span className="si-addition">%</span></p>
+                            <p>34<span className="si-addition">%</span></p>
                         </div>
                         <div className="weather-footer-section-item">
                             <h4>Pressure</h4>
