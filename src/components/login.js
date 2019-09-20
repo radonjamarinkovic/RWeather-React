@@ -1,7 +1,7 @@
 import React, {useState, useContext, useCallback} from 'react';
 import {withRouter, Redirect} from 'react-router-dom';
-import firebase from '../config/fbConfig';
 import {AuthContext} from '../contextProviders/auth';
+import {logIn} from '../helpers/helpers';
 
 import Loader from '../assets/loaders/loader.svg';
 
@@ -10,23 +10,21 @@ const Login = ({history}) => {
     const [error, setError] = useState();
     const [loader, setLoader] =useState(false);
 
-    const handleLogin = useCallback(
-        async e => {
-            setLoader(true);
+    const handleLogin = useCallback( async e => {
+
             e.preventDefault();
+            setLoader(true);
             const [email, password] = e.target.elements;
+         
+            await logIn(email.value, password.value).catch(err => {
+                console.log(err);
+                setError(err.message)
+                setLoader(false);
+            });
 
-            try{ 
-                await firebase.auth()
-                .signInWithEmailAndPassword(email.value, password.value);
-                
+            //setLoader(false);
 
-            }catch(error){
-                setError(error.message);
-            }
-            setLoader(false);
-        }, [history]
-    );
+    },[history]);
 
     const {currentUser} = useContext(AuthContext);
 

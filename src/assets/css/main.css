@@ -123,7 +123,7 @@ nav h4 {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1524px) {
   .nav-links {
     width: 40%;
   }
