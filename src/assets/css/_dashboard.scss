@@ -19,5 +19,128 @@
     position: absolute;
     margin-left: -55px;
     margin-top: 30px;
-
+}
+.weather-panel-item{
+    width: 400px;
+    height: 600px;
+    background-color: black;
+    margin: 0 auto;
+    margin-top:30px;
+}
+.weather-panel-head{
+    width: 100%;
+    height: 350px;
+    background-color: #0d1f21;
+}
+.panel-title{
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 50px;
+    @include flexCenter();
+    justify-content: space-between;
+    color: #ededed;
+    h4{
+        text-transform: uppercase;
+        font-family: 'Open Sans Condensed';
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size:20px;
+        color: #fafbf7;
+    }
+}
+.panel-delete{
+    color: #ededed;
+    font-size: 12px;
+}
+.panel-delete:hover{
+    color: steelblue;
+    cursor: pointer;
+}
+.panel-body{
+    height: 125px;
+    @include flexCenter();
+    justify-content: space-around;
+}
+.img-holder{
+    width: 100px;
+    height: 100px;
+    background-color: $secondary;
+    border-radius: 5px;
+}
+.temp-value{
+    font-size: 75px;
+    color: steelblue;
+}
+.panel-footer{
+    height: 175px;
+}
+.panel-footer-section{
+    height: 100px;
+    @include flexCenter();
+    justify-content: space-around;
+}
+.panel-footer-item{
+    @include flexCenter();
+    flex-direction: column;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+.pfi-title{
+    text-transform: uppercase;
+    color: #ebf4f5;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+.pfi-value{
+    color: $secondary;
+    font-size: 30px;
+}
+.panel-footer-section-2{
+    @include flexCenter();
+    justify-content: space-around;
+}
+.panel-button{
+    width: 150px;
+    border-radius: 5px;
+    height: 38px;
+    margin: 0;
+}
+.weather-panel-footer{
+    box-sizing: border-box;
+    padding-top:25px;
+    text-align: center;
+    width: 100%;
+    height: 250px;
+    background-color: #112929;
+    h4{
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+}
+.weather-footer-section{
+    @include flexCenter();
+    width: 100%;
+    height: 175px;
+}
+.weather-footer-section-item{
+    width: 30%;
+    h4{
+        color: #ebf4f5;
+    }
+    p{
+        font-size: 30px;
+        font-weight: bold;
+        font-family: 'Open Sans Condensed', sans-serif;
+        color: $secondary;
+        color: #ebf4f5;
+    }
+}
+.footer-symbol{
+    font-size: 50px;
+    color: #677c7f;
+}
+.si-addition{
+    font-size: 12px;
+     color: #677c7f;
+     margin-left: 10px;
 }
