@@ -1,7 +1,10 @@
 import React from 'react';
 import firebase from '../../config/fbConfig';
+import { useSelector } from 'react-redux';
 
 const DashboardPanel = () => {
+
+    const sResult = useSelector(state => state.search);
 
     const a = async() => {
         const db = firebase.firestore();
@@ -24,22 +27,22 @@ const DashboardPanel = () => {
                         <span className="panel-delete">
                             More
                         </span>
-                        <h4>London</h4>
+                        <h4>{sResult.name}</h4>
                         <span className="panel-delete">Delete</span>
                     </div>
                     <div className="panel-body">
                         <div className="img-holder"></div>
-                        <span className="temp-value">34°C</span>
+                        <span className="temp-value">{sResult.temp}°C</span>
                     </div>
                     <div className="panel-footer">
                         <div className="panel-footer-section">
                            <div className="panel-footer-item">
                                <span className="pfi-title">Max temp</span>
-                               <span className="pfi-value">34°C</span>
+                               <span className="pfi-value">{sResult.tempMax}°C</span>
                            </div>
                             <div className="panel-footer-item">
                                 <span className="pfi-title">Min temp</span>
-                                <span className="pfi-value">26°C</span>
+                                <span className="pfi-value">{sResult.tempMin}°C</span>
                             </div>
                         </div>
 
@@ -54,12 +57,12 @@ const DashboardPanel = () => {
                         <div className="weather-footer-section-item">
                             <h4>Humidity</h4>
                             <span className="footer-symbol">¥</span>
-                            <p>34<span className="si-addition">%</span></p>
+                            <p>{sResult.humidity}<span className="si-addition">%</span></p>
                         </div>
                         <div className="weather-footer-section-item">
                             <h4>Pressure</h4>
                             <span className="footer-symbol">¥</span>
-                            <p>1028<span className="si-addition">mBar</span></p>
+                            <p>{sResult.pressure}<span className="si-addition">mBar</span></p>
                         </div>
                         <div className="weather-footer-section-item">
                             <h4>Sunset</h4>
